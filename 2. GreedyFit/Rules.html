@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>Hackaday Rules</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body>
+        <h1 id="hackaday-rules">Hackaday Rules</h1>
+<p><em>agent: combination of preprocessor and trained algorithm</em>
+This document will specify the rules of the Hackaday, explain how your agent will be tested and how you have to hand in your agent. If there is at any time doubt about the rules, judging or submission consult the technical team. FruitPunch AI has the final say about what is and what is not a according to the rules.</p>
+<h2 id="rules">Rules</h2>
+<ul>
+<li>Your agent must be written in python.</li>
+<li>While outside resources may be consulted, your agent must be created and trained by your team and thus cannot be blatantly copied from an outside source.</li>
+<li>You can only use the environment provided by FruitPunch AI or the hardware you brought to the Hackaday to train your algorithm.</li>
+<li>Your may not make use of the <em>info</em> field provided by openAI Gym to pick an action during both evaluation and training.</li>
+<li>Your algorithm must make use of machine learning and can thus not be a so called 'Rational Agent' that has pre-programmed rules to decide on actions.</li>
+<li>Your algorithm must pick the action that is output by your agent
+<ul>
+<li>As an extension your preprocessor cannot pick the action that is output by your agent. This does not mean your preprocessor cannot perform complex tasks like for example generate a collection of heat maps from the pixel data.</li>
+</ul>
+</li>
+<li>Your agent must be compatible with the <em>pycman</em> framework.
+<ul>
+<li>This does not mean you have to use <em>pycman</em> for creating and training your algorithm but we will use <em>pycman</em> to load and evaluate your agent so it must adhere to the interface. More on this interface below.</li>
+</ul>
+</li>
+<li>your agent must be able to play 50 games in under 10 minutes on the environment provided by FruitPunch AI.</li>
+</ul>
+<h2 id="judging">Judging</h2>
+<p>To evaluate your agent we will run it in <em>pycman</em> with the following ini options:</p>
+<ul>
+<li>[GAME]
+<ul>
+<li>compressor = DataIO</li>
+<li>fps = 0</li>
+<li>game_name = SpaceInvaders-v0</li>
+<li>render = False</li>
+<li>save_folder = data</li>
+<li>session_name = [your session name]</li>
+<li>store_data = False</li>
+<li>store_video = False</li>
+<li>checkpoint_interval = 0</li>
+</ul>
+</li>
+<li>[Algorithm]
+<ul>
+<li>algorithm_name = [your algorithm name]</li>
+<li>preprocessor = [your prepreocessor name]</li>
+<li>session_restore = True</li>
+<li>can_train = False</li>
+<li>nr_evaluation = 50</li>
+<li>condition_nr_steps = inf</li>
+<li>condition_nr_games = 0</li>
+<li>condition_ram_used = 95</li>
+</ul>
+</li>
+<li>[AlgorithmSettings]
+<ul>
+<li>options for your algorithm</li>
+</ul>
+</li>
+<li>[PreprocessorSettings]
+<ul>
+<li>options for your preprocessor</li>
+</ul>
+</li>
+</ul>
+<p>We rank the agents based on the average score after 50 games. If the two agents with the highest scores are within 10 points of each other the agents are tested another 50 games. The winner will then be determined by the highest score of all 4 runs.</p>
+<h2 id="deliverable">Deliverable</h2>
+<p>You must provide the tech team with the following files before the announced deadline:</p>
+<ul>
+<li>Your algorithm in the form of a python file that works with <em>pycman</em>.</li>
+<li>if you have one, your preprocessor in the form of a python file that works with <em>pycman</em>.</li>
+<li>all files your algorithm needs to load its trained state using the <em>_load_checkpoint</em> method.</li>
+<li>an ini file with the options to run your algorithm (especially the [AlgorithmSettings] and [PreprocessorSettings] sections are important).</li>
+<li>a small writeup explaining what strategy your agent uses, this does not need to be very elaborate.</li>
+</ul>
+<h2 id="algorithm-interface">Algorithm interface</h2>
+<p>In order to work with <em>pycman</em> your algorithm should implement the following methods:</p>
+<ul>
+<li><code>__init__(self, settings, *args, **kwargs)</code>: This method is called when initializing your algorithm, you can for example set your key word arguments here. This methods should call <code>super().__init__(**settings)</code>. (if you are not using pycman during development we recommend commenting the super line out.)
+<ul>
+<li><code>settings</code>: the <em>GAME</em> and <em>Algorithm</em> settings as parsed from the ini file</li>
+<li><code>**kwargs</code>: the keyword arguments as parsed from the <em>AlgorithmSettings</em> section in the ini file</li>
+</ul>
+</li>
+<li><code>_pick_action(self, observation)</code>: This method picks the action (an integer in the range [0-5]) your agent will take during the training phase
+<ul>
+<li><code>observation</code>: the output of your preprocessor</li>
+</ul>
+</li>
+<li><code>_pick_eval_action(self, observation)</code>: his method picks the action (an integer in the range [0-5]) your agent will take during the evaluation phase
+<ul>
+<li><code>observation</code>: the output of your preprocessor</li>
+</ul>
+</li>
+<li><code>_train</code>: trains your algorithm after collecting data (playing games) during the training phase
+<ul>
+<li><code>observations</code>: List of preprocessed observations (the same observations that were passed to the <code>_pick_action</code> method)</li>
+<li><code>metadata</code>: a pandas dataframe containing the following info/columns:
+<ul>
+<li><code>step_id</code>: id of the step in the corresponding game</li>
+<li><code>game_id</code>: id of the game</li>
+<li><code>running_session_id</code>: id of the current session</li>
+<li><code>reward</code>: reward recieved this step</li>
+<li><code>done</code>: if the game is done on this step (indicates the last step of the current game)</li>
+<li><code>info</code>: a dictionary with info about the current game that gym provides. In Space Invaders this dictionary only includes the single key value pair: {<code>ale.lives</code>: <em>an int containing the number of lives left</em>}</li>
+<li><code>action</code>: what action was picked by your algorithm</li>
+</ul>
+</li>
+<li><code>_load_checkpoint(self, path)</code>: method that saves all files that are needed to load the current training state of your algorithm (for example network weights if using a neural net) <em>to the provided path</em>
+<ul>
+<li><code>path</code>: the path the method should write the files to</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>_store_checkpoint(self, path)</code>: method that loads a trained state of your algorithm from files in the given directory
+<ul>
+<li><code>path</code>: the path the method should load the files from</li>
+</ul>
+</li>
+</ul>
+<h2 id="preprocessor-interface">Preprocessor interface</h2>
+<p>in order to work with <em>pycman</em> your preprocessor should implement the following methods:</p>
+<ul>
+<li><code>__init__(self, settings, *args, **kwargs)</code>: This method is called when initializing your preprocessor, you can for example set your key word arguments here. This methods should call <code>super().__init__(**settings)</code>. (if you are not using pycman during development we recommend commenting the super line out.)
+<ul>
+<li><code>settings</code>: the <em>GAME</em> and <em>Algorithm</em> settings as parsed from the ini file</li>
+<li><code>**kwargs</code>: the keyword arguments as parsed from the <em>PreprocessorSettings</em> section in the ini file</li>
+</ul>
+</li>
+<li><code>preprocess(self, observation)</code>: convert the pixeldata from the Space Invaders frame to data to input in your algorithm
+<ul>
+<li><code>observation</code>: a numpy array of shape (210, 160, 3) containing values in the range [0-255] that represent the pixels of a 210x160 frame from Space Invaders. Note that every pixel has 3 values namely one for each color channel (RGB)</li>
+</ul>
+</li>
+<li><code>get_output_size(self)</code>: returns the shape of your preprocessor output</li>
+</ul>
+<h2 id="extra-info">Extra info</h2>
+<ul>
+<li>Do <em>NOT</em> quit Jupyter Lab, this will halt the docker container and we have no way to restart it. If you do so your team will be without an environment for the duration of the day.</li>
+<li>Each environment on IBM's server has access to a lot of threads but single thread performance is normal so a lot of speed can be gained by employing multi-threading.</li>
+<li>The environment has access to a Nvidia Tesla V100 but two environments share a single GPU and thus your container is capped to 50% of the cards capacity which should still be sufficient.</li>
+</ul>
+<h2 id="good-luck-and-have-fun-with-the-hackaday">Good luck and have fun with the hackaday!</h2>
+
+    </body>
+    </html>

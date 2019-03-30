@@ -1,0 +1,96 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 5502 (0x157e)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=FR, ST=LR, L=Montpellier, O=PSSC-ClientCenter, OU=PSSC, CN=PSSC-ClientCenter CA/name=EasyRSA/emailAddress=reseau@fr.ibm.com
+        Validity
+            Not Before: Mar 27 12:57:40 2019 GMT
+            Not After : Mar 26 12:57:40 2020 GMT
+        Subject: C=FR, ST=LR, L=Montpellier, O=PSSC-ClientCenter, OU=PSSC, CN=hackathon_31032019_05/name=EasyRSA/emailAddress=reseau@fr.ibm.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a2:da:bd:39:74:59:02:d4:9d:c0:46:45:67:9f:
+                    88:0b:11:1b:e5:4e:2d:a9:6e:23:a0:c0:dc:c1:e6:
+                    76:f2:76:bd:71:c8:d6:ae:67:f9:f2:ef:eb:ee:64:
+                    d5:0d:47:04:94:f0:b7:99:77:b4:97:ae:5b:16:38:
+                    8c:bb:07:8e:2b:42:10:fa:a7:13:fe:81:b5:3c:ce:
+                    85:35:5e:2e:b4:91:4d:6d:94:19:72:2d:14:e4:2a:
+                    f0:3c:00:c3:3f:2a:4c:98:c1:1b:74:0b:92:88:bb:
+                    5d:a7:ee:90:c4:4b:fd:b1:b3:77:ec:1e:a6:7f:0e:
+                    06:67:01:31:41:61:4a:b1:9c:46:d3:cb:db:78:e5:
+                    43:2a:44:90:59:88:91:68:5e:b2:46:bf:f9:f4:c4:
+                    8e:d8:be:63:82:92:f3:16:5d:dc:de:14:48:59:91:
+                    6f:a4:ac:fd:f0:dc:91:11:aa:6c:e6:ab:78:9f:36:
+                    3a:e6:2b:33:ab:eb:7c:59:d6:84:7d:69:f9:ec:43:
+                    3c:1b:0c:3e:cf:05:9c:a8:d3:ff:08:3c:57:2d:35:
+                    6c:a3:d7:3a:05:6f:6c:12:c1:a9:db:48:14:02:ef:
+                    42:28:26:e2:34:fd:c3:a3:94:81:2f:19:7e:96:82:
+                    3d:ad:e8:0e:f1:9d:2b:f8:fc:b3:c5:16:e4:9c:8b:
+                    68:8d
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                6E:55:BD:07:8B:57:28:5D:F0:B6:B6:B5:D7:4F:5B:82:DA:F1:24:59
+            X509v3 Authority Key Identifier: 
+                keyid:24:6F:FD:B1:FA:B8:0F:FC:2B:02:9B:F2:D6:CC:01:2D:E4:A2:DD:A3
+                DirName:/C=FR/ST=LR/L=Montpellier/O=PSSC-ClientCenter/OU=PSSC/CN=PSSC-ClientCenter CA/name=EasyRSA/emailAddress=reseau@fr.ibm.com
+                serial:C5:28:2A:F1:64:FD:35:B2
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+    Signature Algorithm: sha256WithRSAEncryption
+         79:b7:11:ff:51:bb:60:73:87:2d:95:7b:39:f7:2f:4d:f0:d2:
+         c1:7e:41:e5:95:90:0e:32:ad:3d:80:10:b7:73:05:6d:43:d7:
+         d5:c2:bd:d2:1e:b8:1a:7b:d6:f0:4f:26:13:bd:8e:11:57:17:
+         7d:f2:3f:11:93:96:9d:56:2d:6f:50:45:ed:6a:3d:a1:1b:bf:
+         65:59:ed:dd:29:58:20:17:2f:be:f7:e4:d9:a5:c3:e1:ba:bc:
+         97:b0:55:c5:50:02:93:66:24:8c:42:c9:44:a1:40:50:07:50:
+         e7:87:a2:4f:60:0e:1a:33:e6:12:0a:7f:04:d6:16:ad:07:c8:
+         bb:16:04:b3:7e:48:8e:c7:3c:68:f5:25:9d:1d:38:3e:70:6b:
+         95:d6:57:16:be:b8:2f:4a:81:2e:27:58:33:0b:8d:ff:0a:78:
+         a5:f4:78:13:ad:d5:51:bc:97:3b:ca:00:cc:fd:4e:b6:12:f7:
+         2a:e1:e4:3e:aa:9c:e1:3c:cf:7a:f1:83:f0:cc:8c:0a:c6:3a:
+         ec:de:f9:42:cf:95:fa:97:74:87:bd:03:aa:df:55:1c:fc:aa:
+         fd:fb:f6:93:77:12:b0:0c:d9:d9:85:5a:ea:48:cb:06:72:d4:
+         3e:0e:a8:08:0b:37:77:59:34:d9:13:b1:8d:b2:ee:00:44:a9:
+         ab:73:45:ad
+-----BEGIN CERTIFICATE-----
+MIIFQjCCBCqgAwIBAgICFX4wDQYJKoZIhvcNAQELBQAwga4xCzAJBgNVBAYTAkZS
+MQswCQYDVQQIEwJMUjEUMBIGA1UEBxMLTW9udHBlbGxpZXIxGjAYBgNVBAoTEVBT
+U0MtQ2xpZW50Q2VudGVyMQ0wCwYDVQQLEwRQU1NDMR0wGwYDVQQDExRQU1NDLUNs
+aWVudENlbnRlciBDQTEQMA4GA1UEKRMHRWFzeVJTQTEgMB4GCSqGSIb3DQEJARYR
+cmVzZWF1QGZyLmlibS5jb20wHhcNMTkwMzI3MTI1NzQwWhcNMjAwMzI2MTI1NzQw
+WjCBrzELMAkGA1UEBhMCRlIxCzAJBgNVBAgTAkxSMRQwEgYDVQQHEwtNb250cGVs
+bGllcjEaMBgGA1UEChMRUFNTQy1DbGllbnRDZW50ZXIxDTALBgNVBAsTBFBTU0Mx
+HjAcBgNVBAMUFWhhY2thdGhvbl8zMTAzMjAxOV8wNTEQMA4GA1UEKRMHRWFzeVJT
+QTEgMB4GCSqGSIb3DQEJARYRcmVzZWF1QGZyLmlibS5jb20wggEiMA0GCSqGSIb3
+DQEBAQUAA4IBDwAwggEKAoIBAQCi2r05dFkC1J3ARkVnn4gLERvlTi2pbiOgwNzB
+5nbydr1xyNauZ/ny7+vuZNUNRwSU8LeZd7SXrlsWOIy7B44rQhD6pxP+gbU8zoU1
+Xi60kU1tlBlyLRTkKvA8AMM/KkyYwRt0C5KIu12n7pDES/2xs3fsHqZ/DgZnATFB
+YUqxnEbTy9t45UMqRJBZiJFoXrJGv/n0xI7YvmOCkvMWXdzeFEhZkW+krP3w3JER
+qmzmq3ifNjrmKzOr63xZ1oR9afnsQzwbDD7PBZyo0/8IPFctNWyj1zoFb2wSwanb
+SBQC70IoJuI0/cOjlIEvGX6Wgj2t6A7xnSv4/LPFFuSci2iNAgMBAAGjggFlMIIB
+YTAJBgNVHRMEAjAAMC0GCWCGSAGG+EIBDQQgFh5FYXN5LVJTQSBHZW5lcmF0ZWQg
+Q2VydGlmaWNhdGUwHQYDVR0OBBYEFG5VvQeLVyhd8La2tddPW4La8SRZMIHjBgNV
+HSMEgdswgdiAFCRv/bH6uA/8KwKb8tbMAS3kot2joYG0pIGxMIGuMQswCQYDVQQG
+EwJGUjELMAkGA1UECBMCTFIxFDASBgNVBAcTC01vbnRwZWxsaWVyMRowGAYDVQQK
+ExFQU1NDLUNsaWVudENlbnRlcjENMAsGA1UECxMEUFNTQzEdMBsGA1UEAxMUUFNT
+Qy1DbGllbnRDZW50ZXIgQ0ExEDAOBgNVBCkTB0Vhc3lSU0ExIDAeBgkqhkiG9w0B
+CQEWEXJlc2VhdUBmci5pYm0uY29tggkAxSgq8WT9NbIwEwYDVR0lBAwwCgYIKwYB
+BQUHAwIwCwYDVR0PBAQDAgeAMA0GCSqGSIb3DQEBCwUAA4IBAQB5txH/Ubtgc4ct
+lXs59y9N8NLBfkHllZAOMq09gBC3cwVtQ9fVwr3SHrgae9bwTyYTvY4RVxd98j8R
+k5adVi1vUEXtaj2hG79lWe3dKVggFy++9+TZpcPhuryXsFXFUAKTZiSMQslEoUBQ
+B1Dnh6JPYA4aM+YSCn8E1hatB8i7FgSzfkiOxzxo9SWdHTg+cGuV1lcWvrgvSoEu
+J1gzC43/Cnil9HgTrdVRvJc7ygDM/U62Evcq4eQ+qpzhPM968YPwzIwKxjrs3vlC
+z5X6l3SHvQOq31Uc/Kr9+/aTdxKwDNnZhVrqSMsGctQ+DqgICzd3WTTZE7GNsu4A
+RKmrc0Wt
+-----END CERTIFICATE-----

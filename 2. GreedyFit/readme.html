@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>DO **NOT** QUIT THE JUPYTER LAB INSTANCE, This will terminate your container and we have no way restarting it without IBM's assistance which can be slow on the weekend. If you do quit your instance **your team will possibly be without the environment for the entire Hackaday** and you will have to train on your own hardware.</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body>
+        <h1 id="do-not-quit-the-jupyter-lab-instance-this-will-terminate-your-container-and-we-have-no-way-restarting-it-without-ibms-assistance-which-can-be-slow-on-the-weekend-if-you-do-quit-your-instance-your-team-will-possibly-be-without-the-environment-for-the-entire-hackaday-and-you-will-have-to-train-on-your-own-hardware">DO <strong>NOT</strong> QUIT THE JUPYTER LAB INSTANCE, This will terminate your container and we have no way restarting it without IBM's assistance which can be slow on the weekend. If you do quit your instance <strong>your team will possibly be without the environment for the entire Hackaday</strong> and you will have to train on your own hardware.</h1>
+<h1 id="getting-started">Getting started</h1>
+<h2 id="connecting-to-the-ibm-network">Connecting to the IBM network</h2>
+<p>To connect to your IBM server you have to first start a vpn connection to their internal network. There should be a folder included for every team member with his/her own openVPN certificate and configuration. Only 1 device can be connected per certificate at a time. You first have to install an openVPN client, an installer for a windows client is included.</p>
+<p>To connect after installation of the client follow these steps:</p>
+<ul>
+<li><strong>Windows</strong>
+<ol>
+<li>open <em>install.bat</em></li>
+<li>start <em>openVPN GUI</em> (through for example the start menu)</li>
+<li>right click on the openVPN tray icon</li>
+<li>click connect</li>
+</ol>
+</li>
+<li><strong>Linux</strong>
+<ol>
+<li>running <em>start_openvpn.sh</em> as root should start the connection</li>
+<li>if this does not work try running <code>sudo openvpn --config *.ovpn</code> in the directory with your certificate</li>
+<li>ask tech support or install Windows</li>
+</ol>
+</li>
+<li><strong>MacOS</strong>
+<ol>
+<li>IBM recommends installing <em>tunnelblick</em></li>
+<li>double click on your *.ovpn file</li>
+</ol>
+</li>
+</ul>
+<h2 id="connect-to-your-server">connect to your server</h2>
+<p><strong>DISCLAIMER: by connecting to this server you agree that it will only be used for purposes related to this Hackaday, other uses (like mining bitcoin) are strictly prohibited.</strong></p>
+<ul>
+<li><em>GreedyFit</em>
+<ul>
+<li>Jupyter labs can be found at: <a href="http://10.3.8.112:8888">http://10.3.8.112:8888</a></li>
+<li>SSH access can be requested at the tech support team.</li>
+</ul>
+</li>
+</ul>
+
+    </body>
+    </html>
